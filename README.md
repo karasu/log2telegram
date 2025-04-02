@@ -4,12 +4,11 @@
 </a>
 
 A docker container for reading growing log files and sending notifications via the telegram API based on items in a trigger list.
-Inspired by [JVCubed/log-to-telegram](https://github.com/JVCubed/log-to-telegram/).
 
 ## Setup Docker run
 - Copy the `config.yml`
 
-        $ docker run --rm --entrypoint cat dickverbunt/log-to-telegram  /app/config.yml > config.yml
+        $ docker run --rm --entrypoint cat gustaucastells/log2telegram  /app/config.yml > config.yml
 
 - Add TelegramBot api and chatID to `config.yml`
 - Add triggers to the list to `config.yml`
@@ -20,29 +19,32 @@ Inspired by [JVCubed/log-to-telegram](https://github.com/JVCubed/log-to-telegram
 - Ready! When a line gets added to the log file and matches a trigger it will send this to Telegram.
 
 ## Docker compose
-- Copy the `config.yml`
+- Copy the `config.yml` file
 
-        $ docker run --rm --entrypoint cat dickverbunt/log-to-telegram  /app/config.yml > config.yml
+        $ docker run --rm --entrypoint cat gustaucastells/log2telegram  /app/config.yml > config.yml
 
 - Add TelegramBot api and chatID to `config.yml`
 - Add triggers to the list to `config.yml`
-- Add to docker-compose.yml
+- Add this to compose.yml
 ```
-log-to-telegram:
-    image: dickverbunt/log-to-telegram
-    container_name: log-to-telegram
+log2telegram:
+    image: gustaucastells/log2telegram
+    container_name: log2telegram
     volumes:
       - /{path-to}/config.yml:/app/config.yml
-      - /{path-to-log-file}:/app/file.log
+      - /{path-to-log-file}:/app/file1.log
+      - /{path-to-log-file2}:/app/file2.log
+      - /{path-to-log-file3}:/app/file3.log
     restart: unless-stopped
 ```
 - Run
 
         $ docker-compose up -d
 
-- Ready! When a line gets added to the log file and matches a trigger it will send this to Telegram.
+- Ready! When a line gets added to the log file and matches one of the triggers in config file it will send the log line to Telegram.
 
 ## Notes
 
 - In `config.yml` it's possible to edit the timeout period.
 - Logs will be printed to the terminal. There's also a `/app/debug.log` file.
+
