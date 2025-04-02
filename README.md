@@ -1,6 +1,6 @@
 # log2telegram Docker
-<a href="https://hub.docker.com/r/dickverbunt/log-to-telegram" target="_blank" title="log-to-telegram docker hub">
-  <img src="https://img.shields.io/docker/pulls/dickverbunt/log-to-telegram" alt="Docker Pulls"/>
+<a href="https://hub.docker.com/r/karasu/log2telegram" target="_blank" title="log-to-telegram docker hub">
+  <img src="https://img.shields.io/docker/pulls/karasu/log2telegram" alt="Docker Pulls"/>
 </a>
 
 A docker container for reading growing log files and sending notifications via the telegram API based on items in a trigger list.
