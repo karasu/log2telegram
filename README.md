@@ -1,10 +1,10 @@
-# log-to-telegram Docker
+# log2telegram Docker
 <a href="https://hub.docker.com/r/dickverbunt/log-to-telegram" target="_blank" title="log-to-telegram docker hub">
   <img src="https://img.shields.io/docker/pulls/dickverbunt/log-to-telegram" alt="Docker Pulls"/>
 </a>
 
 A docker container for reading growing log files and sending notifications via the telegram API based on items in a trigger list.
-Inspired by [JVCubed/log-to-telegram](https://github.com/JVCubed/log-to-telegram/). I mostly use it to send Pi-Hole events to Telegram.
+Inspired by [JVCubed/log-to-telegram](https://github.com/JVCubed/log-to-telegram/).
 
 ## Setup Docker run
 - Copy the `config.yml`
